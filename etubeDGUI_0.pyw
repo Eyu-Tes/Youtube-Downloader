@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'eutubeDGUI_0.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(542, 243)
+        MainWindow.setMinimumSize(QtCore.QSize(542, 243))
+        MainWindow.setMaximumSize(QtCore.QSize(542, 243))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("img/eu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.labelURL = QtWidgets.QLabel(self.centralwidget)
+        self.labelURL.setGeometry(QtCore.QRect(10, 30, 81, 21))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(12)
+        self.labelURL.setFont(font)
+        self.labelURL.setObjectName("labelURL")
+        self.lineEditURL = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEditURL.setGeometry(QtCore.QRect(100, 30, 381, 21))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.lineEditURL.setFont(font)
+        self.lineEditURL.setStyleSheet("padding: 1px 5px;")
+        self.lineEditURL.setMaxLength(256)
+        self.lineEditURL.setObjectName("lineEditURL")
+        self.pushButtonURL = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonURL.setGeometry(QtCore.QRect(490, 30, 41, 23))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.pushButtonURL.setFont(font)
+        self.pushButtonURL.setObjectName("pushButtonURL")
+        self.labelQuality = QtWidgets.QLabel(self.centralwidget)
+        self.labelQuality.setGeometry(QtCore.QRect(30, 120, 61, 21))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(12)
+        self.labelQuality.setFont(font)
+        self.labelQuality.setObjectName("labelQuality")
+        self.comboBoxQuality = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBoxQuality.setGeometry(QtCore.QRect(100, 120, 241, 21))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.comboBoxQuality.setFont(font)
+        self.comboBoxQuality.setStyleSheet("padding: 1px 5px;")
+        self.comboBoxQuality.setObjectName("comboBoxQuality")
+        self.pushButtonOk = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonOk.setGeometry(QtCore.QRect(360, 210, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.pushButtonOk.setFont(font)
+        self.pushButtonOk.setObjectName("pushButtonOk")
+        self.pushButtonCancel = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonCancel.setGeometry(QtCore.QRect(450, 210, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.pushButtonCancel.setFont(font)
+        self.pushButtonCancel.setObjectName("pushButtonCancel")
+        self.labelFetchingQuality = QtWidgets.QLabel(self.centralwidget)
+        self.labelFetchingQuality.setGeometry(QtCore.QRect(100, 90, 121, 16))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.labelFetchingQuality.setFont(font)
+        self.labelFetchingQuality.setStyleSheet("color: #008cba;")
+        self.labelFetchingQuality.setText("")
+        self.labelFetchingQuality.setObjectName("labelFetchingQuality")
+        self.labelUrlError = QtWidgets.QLabel(self.centralwidget)
+        self.labelUrlError.setGeometry(QtCore.QRect(100, 60, 251, 16))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans")
+        font.setPointSize(10)
+        self.labelUrlError.setFont(font)
+        self.labelUrlError.setStyleSheet("color: #f44336;")
+        self.labelUrlError.setText("")
+        self.labelUrlError.setObjectName("labelUrlError")
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "eutube Downloader"))
+        self.labelURL.setText(_translate("MainWindow", "Enter URL"))
+        self.pushButtonURL.setText(_translate("MainWindow", "Ok"))
+        self.labelQuality.setText(_translate("MainWindow", "Quality"))
+        self.pushButtonOk.setText(_translate("MainWindow", "Ok"))
+        self.pushButtonCancel.setText(_translate("MainWindow", "Cancel"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

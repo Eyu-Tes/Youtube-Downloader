@@ -146,15 +146,11 @@ class PathandProgressWindow(QMainWindow):
 
     def download_video(self, file_name, folder_name):
         if os.path.exists(self.full_path):
-            font = QFont()
-            font.setFamily("Lucida Sans")
-            font.setPointSize(10)
-            self.ui.labelETA.setFont(font)
-            self.ui.labelETA.setText('File Already Exists!')
             self.ui.labelETA.setStyleSheet("color: #f44336;")
+            self.ui.labelETA.setText('File Already Exists!')
         else:
-            self.ui.labelETA.setText('_')
             self.ui.labelETA.setStyleSheet("color: #000;")
+            self.ui.labelETA.setText('_')
             self.start_progress()
             downloader.start_download(folder=folder_name, file=file_name)
 

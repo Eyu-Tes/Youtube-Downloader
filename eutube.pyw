@@ -102,7 +102,8 @@ class PathandProgressWindow(QMainWindow):
         self.file_name = ''
         self.full_path = ''
         self.progressbar_thread = None
-        self.ui.lineEditPath.setText(downloader.file_name+'.'+downloader.ext)
+        self.safe_file = video_downloader.safe_filename(downloader.file_name)
+        self.ui.lineEditPath.setText(self.safe_file + '.' + downloader.ext)
         size_str = f'{downloader.size/(1024 ** 2):.2f} MB'
         self.ui.labelFileSize.setText(size_str)
         self.ui.pushButtonBrowse.clicked.connect(self.browse_path)
@@ -112,7 +113,7 @@ class PathandProgressWindow(QMainWindow):
 
     def browse_path(self):
         self.file_name, _ = QFileDialog.getSaveFileName(self, 'Save file',
-                                                        downloader.file_name,
+                                                        self.safe_file,
                                                         'All files(*)')
         if self.file_name:
             print(self.file_name + '.' + downloader.ext)
